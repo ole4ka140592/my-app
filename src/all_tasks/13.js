@@ -7,3 +7,16 @@ let sum = (arr) => {
         .filter(el => el !== null)
         .map(el => el * 2)
 }
+
+let sum1 = (arr) => {
+    let newArr = []
+
+    arr.reduce((acc, item) => {
+        if (item !== null) {
+            acc.push(item * 2)
+        }
+        return acc
+    }, newArr)
+
+    return newArr
+}
