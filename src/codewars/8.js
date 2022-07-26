@@ -89,3 +89,17 @@ const zeroFuel = (distanceToPump, mpg, fuelLeft) => {
         return false
     }
 };
+
+
+//Напишите простое регулярное выражение для проверки имени пользователя. Допустимые символы:строчные буквы, числа, подчеркивать. Длина должна быть от 4 до 16 символов (включая оба).
+function validateUsr(username) {
+    return username.length >= 4
+        && username.length <= 16
+        && (username.match(/[a-z]|_|\d/g).length === username.length);
+}
+
+
+//Учитывая строку цифр, вы должны заменить любую цифру ниже 5 на «0», а любую цифру 5 и выше на «1». Верните полученную строку.Примечание: ввод никогда не будет пустой строкой
+function fakeBin(x){
+    return x.split('').map(a => (a>=5) ?'1' : '0').join('')
+}
