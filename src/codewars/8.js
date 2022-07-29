@@ -103,3 +103,15 @@ function validateUsr(username) {
 function fakeBin(x){
     return x.split('').map(a => (a>=5) ?'1' : '0').join('')
 }
+
+
+//Завершите функцию, которая принимает неотрицательное целое число n в качестве входных данных и возвращает список всех степеней числа 2 с показателем степени от 0 до n (включительно).
+function powersOfTwo(n){
+    let arr = [];
+    for(let i=0; i<=n; i++)
+        arr[i] = 2**i;
+    return arr;
+}
+
+
+//
