@@ -56,11 +56,11 @@ function points(games) {
     // your code here
     let point;
     const result = games.map((num) => {
-        if(Number(num.charAt(0)) > Number(num.charAt(2))) {
+        if (Number(num.charAt(0)) > Number(num.charAt(2))) {
             return point = 3;
-        }else if(Number(num.charAt(0)) === Number(num.charAt(2))){
+        } else if (Number(num.charAt(0)) === Number(num.charAt(2))) {
             return point = 1;
-        }else {
+        } else {
             return point = 0;
         }
     })
@@ -83,9 +83,9 @@ function sayHello(name) {
 //Вы отдыхали с друзьями далеко от дома, но когда пришло время возвращаться, вы понимаете, что топливо на исходе, а ближайшая заправка находится в 50 милях от вас! Вы знаете, что в среднем ваш автомобиль расходует около 25 миль на галлон. Осталось 2 галлона. Учитывая эти факторы, напишите функцию, которая говорит вам, можно ли добраться до насоса или нет. Функция должна возвращать true, если это возможно, и false, если нет.
 const zeroFuel = (distanceToPump, mpg, fuelLeft) => {
     return mpg * fuelLeft >= distanceToPump
-    if (zeroFuel>1){
+    if (zeroFuel > 1) {
         return true
-    } else{
+    } else {
         return false
     }
 };
@@ -100,17 +100,28 @@ function validateUsr(username) {
 
 
 //Учитывая строку цифр, вы должны заменить любую цифру ниже 5 на «0», а любую цифру 5 и выше на «1». Верните полученную строку.Примечание: ввод никогда не будет пустой строкой
-function fakeBin(x){
-    return x.split('').map(a => (a>=5) ?'1' : '0').join('')
+function fakeBin(x) {
+    return x.split('').map(a => (a >= 5) ? '1' : '0').join('')
 }
 
 
 //Завершите функцию, которая принимает неотрицательное целое число n в качестве входных данных и возвращает список всех степеней числа 2 с показателем степени от 0 до n (включительно).
-function powersOfTwo(n){
+function powersOfTwo(n) {
     let arr = [];
-    for(let i=0; i<=n; i++)
-        arr[i] = 2**i;
+    for (let i = 0; i <= n; i++)
+        arr[i] = 2 ** i;
     return arr;
+}
+
+
+//В зоопарк прибыли новые животные. Смотритель зоопарка обеспокоен тем, что, возможно, у животных неправильные хвосты. Чтобы помочь ей, вы должны исправить сломанную функцию, чтобы убедиться, что второй аргумент (хвост) совпадает с последней буквой первого аргумента (тела) - иначе хвост не подходит! Если хвост правильный, верните true, иначе верните false. Аргументы всегда будут непустыми строками и обычными буквами.
+function correctTail(body, tail) {
+    let sub = body.slice(-1)
+    if (sub === tail) {
+        return true
+    } else {
+        return false
+    }
 }
 
 
