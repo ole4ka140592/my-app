@@ -53,7 +53,6 @@ function hexToDec(hexString) {
 // 0 <= у <= 4
 
 function points(games) {
-    // your code here
     let point;
     const result = games.map((num) => {
         if (Number(num.charAt(0)) > Number(num.charAt(2))) {
@@ -126,24 +125,24 @@ function correctTail(body, tail) {
 
 
 //Ваша задача состоит в том, чтобы сделать две функции (максимум и минимум или максимум и минимум и т. д., в зависимости от языка), которые получают на вход список целых чисел и возвращают наибольшее и наименьшее число в этом списке соответственно.
-let min = function(list){
+let min = function (list) {
     return Math.min(...list)
 }
 
-let max = function(list){
+let max = function (list) {
     return Math.max(...list)
 }
 
 
 //Тимми и Сара думают, что они влюблены, но там, где они живут, они узнают об этом, только когда каждый сорвет по цветку. Если у одного из цветов четное количество лепестков, а у другого нечетное количество лепестков, это означает, что они влюблены. Напишите функцию, которая будет принимать количество лепестков каждого цветка и возвращать true, если они влюблены, и false, если нет.
-function lovefunc(flower1, flower2){
+function lovefunc(flower1, flower2) {
     return flower1 % 2 !== flower2 % 2
 }
 
 
 //Учитывая строку, вы должны вернуть строку, в которой каждый символ (с учетом регистра) повторяется один раз.
 function doubleChar(str) {
-    return str.split('').map(m=> m+=m).join('')
+    return str.split('').map(m => m += m).join('')
 }
 
 
@@ -151,14 +150,14 @@ function doubleChar(str) {
 // чтобы приветствовать человека. Обратите внимание, что имя будет массивом, состоящим из одного или
 // нескольких значений, которые должны быть соединены вместе с одним пробелом между каждым,
 // а длина массива имен в тестовых примерах будет варьироваться.
-function sayHello( name, city, state ) {
+function sayHello(name, city, state) {
     return `Hello, ${name.join(' ')}! Welcome to ${city}, ${state}!`
 }
 
 
 //Теперь вам нужно написать функцию, которая принимает аргумент и возвращает его квадрат.
 function square(a) {
-    return a*a
+    return a * a
 }
 
 
@@ -166,15 +165,67 @@ function square(a) {
 // более длинной строкой внутри. Строки не будут одинаковой длины, но могут быть пустыми (нулевой длины).Подсказка для пользователей R:
 // Длина строки не всегда совпадает с количеством символов
 // Например: (Ввод1, Ввод2) --> вывод
-function solution(a, b){
-    if (a.length>b.length) {
-        return b+a+b
+function solution(a, b) {
+    if (a.length > b.length) {
+        return b + a + b
     }
-    if (a.length<b.length) {
-        return a+b+a
+    if (a.length < b.length) {
+        return a + b + a
     }
 }
 
 
 //Учитывая число n, вернуть количество положительных нечетных чисел меньше n, ЛЕГКО!
 // Примеры (ввод -> вывод) 7 -> 3 (потому что нечетные числа ниже 7 равны [1, 3, 5])
+function oddCount(n) {
+    let arr = []
+    for (let i = 0; i < n; i++) {
+        if (i % 2 !== 0) {
+            arr.push(i)
+        }
+    }
+    return arr
+}
+
+
+//Создайте функцию, которая возвращает массив целых чисел от n до 1, где n>0.
+// Пример: n=5 --> [5,4,3,2,1]
+const reverseSeq = n => {
+    let arr = []
+    for (let i = n; i > 0; i--) {
+        arr.push(i)
+    }
+    return arr
+};
+
+
+//напишите мне функцию stringy, которая принимает размер и возвращает строку из чередующихся «1» и «0».
+// строка должна начинаться с 1. строка размером 6 должна возвращать: '101010'. с размером 4 должно возвращаться: '1010'. с размером 12 должен вернуть: «101010101010». Размер всегда будет положительным и будет использовать только целые числа.
+function stringy(size) {
+    let result = '';
+    for (let i = 1; i <= size; i++) {
+        result += i % 2;
+    }
+    return result;
+}
+
+
+//Завершите решение, чтобы оно перевернуло все слова в переданной строке. Пример (ввод --> вывод):
+//"The greatest victory is that which requires no battle" --> "battle no requires which that is victory greatest The"
+function reverseWords(str) {
+    return str.split(' ').reverse().join(' ')
+}
+
+
+//Создайте функцию с именем ярлык для удаления гласных
+function shortcut(string) {
+    let al = ['a', 'e', 'i', 'o', 'u',
+        'A', 'E', 'I', 'O', 'U'];
+    let result = "";
+    for (let i = 0; i < string.length; i++) {
+        if (!al.includes(string[i])) {
+            result += string[i];
+        }
+    }
+    return result;
+}
