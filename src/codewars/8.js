@@ -284,8 +284,8 @@ var replaceDots = function (str) {
 
 
 //Получив букву, верните ее положение в алфавите. Ввод :: "а" Вывод :: "Позиция алфавита: 1"
-function position(letter){
-    return "Position of alphabet: " + ((letter.charCodeAt(0)-97) + 1);
+function position(letter) {
+    return "Position of alphabet: " + ((letter.charCodeAt(0) - 97) + 1);
 }
 
 
@@ -300,15 +300,15 @@ function sumArray(array) {
     } else if (array.length < 2) {
         return 0
     } else {
-        let min = array.sort((a,b)=> a-b)
-        let minValue=min[0]
-        let max = array.sort((a,b)=> b-a)
-        let maxValue=max[0]
-        let sum = array.reduce((acc,number)=> {
-            acc+=number
+        let min = array.sort((a, b) => a - b)
+        let minValue = min[0]
+        let max = array.sort((a, b) => b - a)
+        let maxValue = max[0]
+        let sum = array.reduce((acc, number) => {
+            acc += number
             return acc
         })
-        return sum - minValue -maxValue
+        return sum - minValue - maxValue
     }
 }
 
@@ -323,16 +323,43 @@ function opposite(number) {
 
 
 // Убрать восклицательный знак в конце строки. Для начинающего ката можно считать, что входные данные всегда являются строкой, проверять ее не нужно.
-function remove (string) {
-    return string[string.length-1] === '!' ? string.slice(0, string.length-1) : string;
+function remove(string) {
+    return string[string.length - 1] === '!' ? string.slice(0, string.length - 1) : string;
 }
 
 
 //Ваши одноклассники попросили вас скопировать для них некоторые документы. Вы знаете, что есть «n» одноклассников, а в документах «m» страниц. Ваша задача — посчитать, сколько чистых страниц вам нужно. Если n < 0 или m < 0, вернуть 0.
 function paperwork(n, m) {
-    if (n< 0 || m< 0) {
+    if (n < 0 || m < 0) {
         return 0
     } else {
         return n * m
     }
+}
+
+
+//создать функцию, которая удаляет первый и последний символы строки. Вам дан один параметр, исходная строка. Вам не нужно беспокоиться о строках, содержащих менее двух символов
+function removeChar(str) {
+    return str.split('').slice(1, -1).join('')
+};
+
+
+//Вы пишете код для управления светофорами в вашем городе. Вам нужна функция для обработки каждого изменения с зеленого на желтый, на красный, а затем снова на зеленый. Завершите функцию, которая принимает строку в качестве аргумента, представляющую текущее состояние источника света, и возвращает строку, представляющую состояние, в которое свет должен перейти. Например, когда вход зеленый, выход должен быть желтым.
+function updateLight(current) {
+    if (current === 'green') {
+        return 'yellow';
+    } else if (current === 'yellow') {
+        return 'red';
+    } else {
+        return 'green';
+    }
+}
+
+
+//Если указано число от 0 до 9, верните его словами. Вход :: 1 Выход :: "Один". Если ваш язык поддерживает это, попробуйте использовать оператор switch.
+function switchItUp(number) {
+    const obj = {
+        0: 'Zero', 1: 'One', 2: 'Two', 3: 'Three', 4: 'Four', 5: 'Five', 6: 'Six', 7: 'Seven', 8: 'Eight', 9: 'Nine',
+    };
+    return obj[number]
 }
