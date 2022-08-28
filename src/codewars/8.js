@@ -605,3 +605,13 @@ function greet(language) {
     ]
     return obj[0][language] === undefined ? 'Welcome' : obj[0][language];
 }
+
+
+//Суммирование
+// Напишите программу, которая находит сумму всех чисел от 1 до num. Число всегда будет положительным целым числом больше 0. Например: суммирование (2) -> 3 + 1 + 2
+// суммирование (8) -> 36
+// 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8
+var summation = function (num) {
+    // Code here
+    return num*(num+1)/2
+}
