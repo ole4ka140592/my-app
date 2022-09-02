@@ -67,3 +67,20 @@ function findShort(s){
 
 
 //Возьмите 2 строки s1 и s2, содержащие только буквы от a до z. Возвращает новую отсортированную строку, максимально длинную, содержащую различные буквы (каждая из которых взята только один раз) из s1 или s2.
+function longest(s1, s2) {
+    let a = (s1+s2).split('').sort()
+    return [...new Set(a)].join('')
+}
+
+
+//Возвращает количество (количество) гласных в заданной строке. Мы будем рассматривать a, e, i, o, u как гласные для этой Ката (но не y). Входная строка будет состоять только из строчных букв и/или пробелов.
+function getCount(str) {
+    let vowelsCount = 0
+    const vowels = ["a", "e", "i", "o", "u"]
+    for(let char of str) {
+        if(vowels.includes(char)) {
+            vowelsCount++
+        }
+    }
+    return vowelsCount;
+}
