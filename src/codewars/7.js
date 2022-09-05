@@ -122,4 +122,17 @@ function predictAge(age1,age2,age3,age4,age5,age6,age7,age8){
 }
 
 
+//Вам будет предоставлен массив и предельное значение. Вы должны убедиться, что все значения в массиве ниже или равны предельному значению. Если они есть, верните true. В противном случае верните ложь.
+function smallEnough(a, limit){
+    a.sort((a,b)=> b-a)
+    let max=a[0]
+    if (max <= limit) {
+        return true
+    }
+    else {
+        return false
+    }
+}
+
+
 //
