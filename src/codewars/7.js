@@ -172,4 +172,19 @@ function digits(n) {
 }
 
 
-//
+//Завершите решение так, чтобы оно перевернуло переданную в него строку. 'мир' => 'длроу' 'слово' => 'дроу'
+function solution(str){
+    return str.split("").reverse().join("")
+}
+
+
+//Напишите функцию reverseList, которая просто переворачивает списки.
+function reverseList(arr) {
+    return arr.reverse();
+}
+
+
+//Измените функцию spacify, чтобы она возвращала заданную строку с пробелами, вставленными между каждым символом. spacify("привет мир") // возвращает "привет мир"
+function spacify(str) {
+    return str.split('').join(' ')
+}
