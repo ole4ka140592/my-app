@@ -220,3 +220,24 @@ function squareDigits(num){
 function hasUniqueChars(str){
     return new Set(str).size === str.length
 }
+
+
+//Завершите функцию/метод, чтобы он возвращал URL-адрес с чем-либо после удаления привязки (#) Examples
+//"www.codewars.com#about" --> "www.codewars.com"
+//"www.codewars.com?page=1" -->"www.codewars.com?page=1
+function removeUrlAnchor(url){
+    if (arguments.length !== 1) {
+        throw new Error("expected exactly one argument");
+    }
+    if (typeof url !== "string") {
+        throw new TypeError("expect first argument to be a string");
+    }
+    if (url.length === 0) {
+        return "";
+    }
+    const [character, ...remainingUrl] = url;
+    if (character === "#") {
+        return "";
+    }
+    return character + removeUrlAnchor(remainingUrl.join(""));
+}
