@@ -54,13 +54,13 @@ function maskify(cc) {
 // Специальная рекомендация
 // Еще одна серия, новаторская и интересная, средней сложности. Те, кто любит бросать вызов, могут попробовать эти ката: Играть в тетрис: формировать анастомоз
 // Играть во FlappyBird: вперед смело
-function testit(a,b){
-    return a|b;
+function testit(a, b) {
+    return a | b;
 }
 
 
 //Просто, учитывая строку слов, вернуть длину кратчайшего слова (слов). Строка никогда не будет пустой, и вам не нужно учитывать разные типы данных.
-function findShort(s){
+function findShort(s) {
     let arr = s.split(" ").sort((a, b) => a.length - b.length);
     return arr[0].length
 }
@@ -68,7 +68,7 @@ function findShort(s){
 
 //Возьмите 2 строки s1 и s2, содержащие только буквы от a до z. Возвращает новую отсортированную строку, максимально длинную, содержащую различные буквы (каждая из которых взята только один раз) из s1 или s2.
 function longest(s1, s2) {
-    let a = (s1+s2).split('').sort()
+    let a = (s1 + s2).split('').sort()
     return [...new Set(a)].join('')
 }
 
@@ -77,8 +77,8 @@ function longest(s1, s2) {
 function getCount(str) {
     let vowelsCount = 0
     const vowels = ["a", "e", "i", "o", "u"]
-    for(let char of str) {
-        if(vowels.includes(char)) {
+    for (let char of str) {
+        if (vowels.includes(char)) {
             vowelsCount++
         }
     }
@@ -89,7 +89,7 @@ function getCount(str) {
 //Завершите решение так, чтобы оно возвращало true, если первый переданный аргумент (строка) заканчивается вторым аргументом (тоже строкой). Примеры:
 //solution('abc', 'bc') // returns true
 //solution('abc', 'd') // returns false
-function solution(str, ending){
+function solution(str, ending) {
     return str.endsWith(ending)
 }
 
@@ -106,8 +106,8 @@ function solution(str, ending){
 // Судзуки нужна помощь, чтобы собрать своих учеников!
 // Сколько ступеней поднимется Сузуки за 20 лет?
 function rakeGarden(garden) {
-    var rakedGarden= garden.split(' ').map(value=>value=='rock'?'rock':'gravel').join(' ')
-      return rakedGarden;
+    var rakedGarden = garden.split(' ').map(value => value == 'rock' ? 'rock' : 'gravel').join(' ')
+    return rakedGarden;
 }
 
 
@@ -115,33 +115,32 @@ function rakeGarden(garden) {
 // Разделить на два.
 // Пример PredictAge(65, 60, 75, 55, 60, 63, 64, 45) === 86
 // Примечание: результат следует округлить до ближайшего целого числа в меньшую сторону. Некоторые случайные тесты могут не пройти из-за ошибки в реализации JavaScript. Просто отправьте повторно, если это произойдет с вами
-function predictAge(age1,age2,age3,age4,age5,age6,age7,age8){
-    const ages= [age1, age2, age3, age4, age5, age6, age7, age8];
+function predictAge(age1, age2, age3, age4, age5, age6, age7, age8) {
+    const ages = [age1, age2, age3, age4, age5, age6, age7, age8];
     const mulSum = ages.reduce((a, x) => a + x ** 2, 0);
     return Math.floor(mulSum ** 0.5 / 2);
 }
 
 
 //Вам будет предоставлен массив и предельное значение. Вы должны убедиться, что все значения в массиве ниже или равны предельному значению. Если они есть, верните true. В противном случае верните ложь.
-function smallEnough(a, limit){
-    a.sort((a,b)=> b-a)
-    let max=a[0]
+function smallEnough(a, limit) {
+    a.sort((a, b) => b - a)
+    let max = a[0]
     if (max <= limit) {
         return true
-    }
-    else {
+    } else {
         return false
     }
 }
 
 
 //Изограмма — это слово, в котором нет повторяющихся букв, последовательных или непоследовательных. Реализуйте функцию, определяющую, является ли строка, содержащая только буквы, изограммой. Предположим, что пустая строка является изограммой. Игнорировать регистр букв. Пример: (Ввод --> Вывод) "Дерматоглифика" --> правда "аба" --> ложь "moOse" --> false (игнорировать регистр букв)
-function isIsogram(str){
+function isIsogram(str) {
     var i, j;
     str = str.toLowerCase();
-    for(i = 0; i < str.length; ++i) {
-        for(j = i + 1; j < str.length; ++j) {
-            if(str[i] === str[j]) {
+    for (i = 0; i < str.length; ++i) {
+        for (j = i + 1; j < str.length; ++j) {
+            if (str[i] === str[j]) {
                 return false;
             }
         }
@@ -156,24 +155,24 @@ function isIsogram(str){
 // x == bang --> возвращаемая строка преобразуется в коды символов, каждый код уменьшается на количество проходов и суммируется до одной цифры
 // x == badpresent --> return 'Возьмите это обратно!'
 // x == собака, вернуть 'упасть в обморок от волнения y раз' (где y - значение, заданное для y).
-function present(x, y){
-    if (x==='badpresent') return 'Take this back!'
-    if (x==='dog') return `pass out from excitement ${y} times`
-    if (x==='crap') return 'acpr'
-    if (x==='empty') return 'empty'
-    if (x==='bang') return x.split('').reduce((a,b)=>a+(b.charCodeAt()-y),0)
-    return x.split('').map(v=>String.fromCharCode(v.charCodeAt()+y)).join('')
+function present(x, y) {
+    if (x === 'badpresent') return 'Take this back!'
+    if (x === 'dog') return `pass out from excitement ${y} times`
+    if (x === 'crap') return 'acpr'
+    if (x === 'empty') return 'empty'
+    if (x === 'bang') return x.split('').reduce((a, b) => a + (b.charCodeAt() - y), 0)
+    return x.split('').map(v => String.fromCharCode(v.charCodeAt() + y)).join('')
 }
 
 
 //Определите общее количество цифр в целом числе (n>=0), заданном в качестве входных данных для функции. Например, 9 — это одна цифра, 66 — 2 цифры, а 128685 — 6 цифр. Будьте осторожны, чтобы избежать переполнения/недостаточного заполнения. Все входы будут действительными.
 function digits(n) {
-    return (''+n).length
+    return ('' + n).length
 }
 
 
 //Завершите решение так, чтобы оно перевернуло переданную в него строку. 'мир' => 'длроу' 'слово' => 'дроу'
-function solution(str){
+function solution(str) {
     return str.split("").reverse().join("")
 }
 
@@ -194,30 +193,30 @@ function spacify(str) {
 function findNextSquare(sq) {
     var root1;
     var nextroot;
-    if(Math.sqrt(sq)%1 ===0){
-        root1=Math.sqrt(sq)
-        nextroot=root1+1
-    }else{
+    if (Math.sqrt(sq) % 1 === 0) {
+        root1 = Math.sqrt(sq)
+        nextroot = root1 + 1
+    } else {
         return -1;
     }
-    return nextroot*nextroot;
+    return nextroot * nextroot;
 }
 
 
 //Напишите функцию, которая принимает строку и делает из нее аббревиатуру. Правило составления аббревиатуры в этой ката: разделить строку на слова пробелом взять каждую первую букву слова в заданной строке прописные это присоединиться к ним вместе Например: Кодовые войны -> C, w -> C W -> CW Примечание. В заданной строке будет не менее двух слов!
-function toAcronym(inp){
-    return inp.split(' ').map(m=>m[0].toUpperCase()).join('')
+function toAcronym(inp) {
+    return inp.split(' ').map(m => m[0].toUpperCase()).join('')
 }
 
 
 //Добро пожаловать. В этой ката вас просят возвести в квадрат каждую цифру числа и соединить их. Например, если мы пропустим через функцию 9119, получится 811181, потому что 92 — это 81, а 12 — это 1. Примечание. Функция принимает целое число и возвращает целое число.
-function squareDigits(num){
-    return +(num.toString().split("").map(m=> m*m).join(""))
+function squareDigits(num) {
+    return +(num.toString().split("").map(m => m * m).join(""))
 }
 
 
 //Напишите программу, которая определяет, содержит ли строка только уникальные символы. Возвращает true, если это так, и false в противном случае. Строка может содержать любой из 128 символов ASCII. Символы чувствительны к регистру, например. 'a' и 'A' считаются разными символами.
-function hasUniqueChars(str){
+function hasUniqueChars(str) {
     return new Set(str).size === str.length
 }
 
@@ -225,7 +224,7 @@ function hasUniqueChars(str){
 //Завершите функцию/метод, чтобы он возвращал URL-адрес с чем-либо после удаления привязки (#) Examples
 //"www.codewars.com#about" --> "www.codewars.com"
 //"www.codewars.com?page=1" -->"www.codewars.com?page=1
-function removeUrlAnchor(url){
+function removeUrlAnchor(url) {
     if (arguments.length !== 1) {
         throw new Error("expected exactly one argument");
     }
@@ -240,4 +239,19 @@ function removeUrlAnchor(url){
         return "";
     }
     return character + removeUrlAnchor(remainingUrl.join(""));
+}
+
+
+//Ваша задача — написать функцию factorial
+function factorial(n) {
+    return n ? n * factorial(n - 1) : 1
+}
+
+
+//В математике факториал неотрицательного целого числа n, обозначаемый n!, представляет собой произведение всех положительных целых чисел, меньших или равных n. Например: 5! = 5 * 4 * 3 * 2 * 1 = 120. По соглашению значение 0! 1. Напишите функцию для вычисления факториала для заданных входных данных. Если входное значение меньше 0 или больше 12, генерируется исключение типа ArgumentOutOfRangeException (C#), IllegalArgumentException (Java) или RangeException (PHP), либо генерируется ошибка RangeError (JavaScript) или ValueError (Python), либо возвращается -1 (C). Подробнее о факториале можно узнать здесь.
+function factorial(n) {
+    if (n < 0 || n > 12) {
+        throw new RangeError
+    }
+    return n ? n * factorial(n - 1) : 1
 }
