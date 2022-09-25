@@ -352,3 +352,24 @@ function evenNumbers(array, number) {
     // good luck
     return array.filter(v=>v%2==0).slice(-number)
 }
+
+
+//Площадь стрелки
+// Стрелка образуется в прямоугольнике со сторонами a и b путем соединения нижних углов с серединой верхнего края и центром прямоугольника. стрелка a и b являются целыми числами и > 0. Напишите функцию, которая возвращает площадь стрелки.
+function arrowArea(a,b) {
+    return (a*b/4).toFixed(2)*1
+}
+
+
+//На этот раз ни истории, ни теории. В приведенных ниже примерах показано, как написать функцию accum:
+// Примеры:
+// accum("abcd") -> "A-Bb-Ccc-Dddd"
+// accum("RqaEzty") -> "R-Qq-Aaa-Eeee-Zzzzz-Ttttt-Yyyyyyy"
+// accum("cwAt") -> "C-Ww-Aaa-Tttt"
+// Параметр accum представляет собой строку, включающую только буквы из a..z и A..Z.
+function accum(s) {
+    return s.split('')
+        .map((c, i) => (c.toUpperCase() + c.toLowerCase()
+            .repeat(i)))
+        .join('-');
+}
