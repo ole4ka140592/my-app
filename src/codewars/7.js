@@ -275,7 +275,8 @@ function factorial(n) {
 // Поэтому требуется 2 хода, чтобы два кольца достигли одинакового числа.
 // спиннингрингс(3, 2) = 2
 function spinningRings(innerMax, outerMax) {
-    for(var i = 1; innerMax - ((i - 1) % (innerMax + 1)) !== i % (outerMax + 1); i++) {}
+    for (var i = 1; innerMax - ((i - 1) % (innerMax + 1)) !== i % (outerMax + 1); i++) {
+    }
     return i;
 }
 
@@ -283,10 +284,10 @@ function spinningRings(innerMax, outerMax) {
 //Переместите каждую букву в предоставленной строке вперед на 10 букв по алфавиту.
 // Если он идет дальше «z», начните снова с «a».
 // Ввод будет строкой длины > 0.
-function moveTen(s){
-    const str='abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz';
-    const arr=s.split('').map(v=>v=str.indexOf(v)+10)
-    return arr.map(v=>v=str[v]).join('')
+function moveTen(s) {
+    const str = 'abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz';
+    const arr = s.split('').map(v => v = str.indexOf(v) + 10)
+    return arr.map(v => v = str[v]).join('')
 }
 
 
@@ -313,13 +314,14 @@ function moveTen(s){
 // "синий"
 // >>> q2.цвет
 // "красный"
-class Quark{
-    constructor(color,flavor){
-        this.color=color;
-        this.flavor=flavor
-        this.baryon_number=1/3
+class Quark {
+    constructor(color, flavor) {
+        this.color = color;
+        this.flavor = flavor
+        this.baryon_number = 1 / 3
     }
-    interact(obj){
+
+    interact(obj) {
         const color1 = obj.color;
         const color2 = this.color;
         this.color = color1;
@@ -336,8 +338,8 @@ class Quark{
 // Если в здании нет призраков, вернуть строку:
 // "Ты просто хотел мой автограф, не так ли?"
 function ghostBusters(building) {
-    if(building.match(/ /)) {
-        return building.split(" ").reduce((a,b)=>a+b)
+    if (building.match(/ /)) {
+        return building.split(" ").reduce((a, b) => a + b)
     }
     return "You just wanted my autograph didn't you?"
 }
@@ -350,14 +352,14 @@ function ghostBusters(building) {
 //([6, -25, 3, 7, 5, 5, 7, -3, 23], 1) => [6]
 function evenNumbers(array, number) {
     // good luck
-    return array.filter(v=>v%2==0).slice(-number)
+    return array.filter(v => v % 2 == 0).slice(-number)
 }
 
 
 //Площадь стрелки
 // Стрелка образуется в прямоугольнике со сторонами a и b путем соединения нижних углов с серединой верхнего края и центром прямоугольника. стрелка a и b являются целыми числами и > 0. Напишите функцию, которая возвращает площадь стрелки.
-function arrowArea(a,b) {
-    return (a*b/4).toFixed(2)*1
+function arrowArea(a, b) {
+    return (a * b / 4).toFixed(2) * 1
 }
 
 
@@ -376,15 +378,38 @@ function accum(s) {
 
 
 //Учитывая массив чисел (в строковом формате), вы должны вернуть строку. Цифры соответствуют буквам алфавита в обратном порядке: a=26, z=1 и т. д. Также следует учитывать '!', '?' и ' ', которые представлены как '27', '28' и '29' соответственно. Все входы будут действительными.
-function switcher(x){
+function switcher(x) {
     let alpha = ' zyxwvutsrqponmlkjihgfedcba!? '
-    return x.map( v=>alpha[v]).join('')
+    return x.map(v => alpha[v]).join('')
 }
 
 
 //Цвет играет важную роль в нашей жизни. Большинству из нас этот цвет нравится больше, чем другой. Специалисты по пользовательскому опыту считают, что определенные цвета имеют для нас определенное психологическое значение.Вам дан двумерный массив, состоящий из цвета и его «общей» ассоциации в каждом элементе массива. Функция, которую вы напишете, должна возвращать цвет как «ключ» и ассоциацию как «значение».
 // Например:
 //var array = [["white", "goodness"], ...] //returns [{white: 'goodness'}, ...]
-function colourAssociation(array){
-    return array.map(([colour, association]) => ({[colour]:association}))
+function colourAssociation(array) {
+    return array.map(([colour, association]) => ({[colour]: association}))
+}
+
+
+//Ваша задача — разбить плитку шоколада заданного размера n x m на маленькие квадраты. Каждый квадрат имеет размер 1x1 и не ломается. Реализуйте функцию, которая будет возвращать минимальное количество необходимых разрывов. Например, если вам дали плитку шоколада размером 2 x 1, вы можете разделить ее на отдельные квадраты всего за один раз, но для размера 3 x 1 вы должны сделать два разрыва. Если входные данные недействительны, вы должны вернуть 0 (так как разрывы не нужны, если у нас нет шоколада для разделения). Ввод всегда будет неотрицательным целым числом.
+function breakChocolate(n, m) {
+    if ((n > 1 && m > 1) || (n > 1 && m == 1) || (n == 1 && m > 1)) {
+        return m * n - 1;
+    } else {
+        return 0;
+    }
+}
+
+
+//Вам даны два массива строк a1 и a2. Каждая строка состоит из букв от a до z. Пусть x будет любой строкой в ​​первом массиве, а y будет любой строкой во втором массиве. Найдите max (abs (длина (x) - длина (y))) Если a1 и/или a2 пусты, верните -1 на каждом языке, кроме Haskell (F#), где вы вернете Ничего (None).Пример:
+// a1 = ["hoqq", "bbllkw", "oox", "ejjuyyy", "plmiis", "xxxzgpsssa", "xxwwkktt", "znnnnfqknaz", "qqquuhii", "dvvvwz"]
+// a2 = ["cccooommaaqqoxii", "gggqaffhhh", "tttoowwwmmww"]
+// mxdiflg(a1, a2) --> 13
+// Примечание Баша:
+// ввод: 2 строки с подстроками, разделенными ,
+// вывод: число в виде строки
+function mxdiflg(a1, a2) {
+    if(a1.length==0||a2.length==0)return -1;
+    return Math.max(Math.max(...a1.map(x=>x.length))-Math.min(...a2.map(x=>x.length)),Math.max(...a2.map(x=>x.length))-Math.min(...a1.map(x=>x.length)))
 }
