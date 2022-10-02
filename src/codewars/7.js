@@ -437,3 +437,26 @@ function vaporcode(string) {
 function maxMultiple(divisor, bound){
     return bound-bound%divisor
 }
+
+
+//Проверьте, содержит ли строка одинаковое количество «x» и «o». Метод должен возвращать логическое значение и не учитывать регистр. Строка может содержать любой символ.
+// Примеры ввода/вывода:
+//XO("ooxx") => true
+//XO("xooxx") => false
+//XO("ooxXm") => true
+//XO("zpzpzpp") => true // when no 'x' and 'o' is present should return true
+//XO("zzoo") => false
+function XO(str) {
+    let arr=str.toLowerCase().split("")
+    let counterX = 0;
+    let counterO = 0;
+    for (let elem of arr) {
+        if (elem == 'x') {
+            counterX++;
+        }
+        if (elem == 'o') {
+            counterO++;
+        }
+    }
+    return counterX ===counterO? true: false
+}
