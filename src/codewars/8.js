@@ -692,3 +692,50 @@ function billboard(name, price = 30) {
     let length = name.length
     return length * price
 }
+
+function billboard(name, price = 30) {
+    let length = name.length
+    let count = 0
+    if (price) {
+        for (let i = 0; i < length; i++) {
+            count += price
+        }
+    } else {
+        for (let i = 0; i < length; i++) {
+            count += 30
+        }
+    }
+    return count
+}
+
+
+//Я новичок в кодировании и теперь хочу получить сумму двух массивов... На самом деле сумму всех их элементов. Я буду признателен за вашу помощь. P.S. Каждый массив включает только целые числа. Выход - тоже число.
+function arrayPlusArray(arr1, arr2) {
+    let sum1=arr1.reduce((el,acc)=> el+acc)
+    let sum2=arr2.reduce((el,acc)=> el+acc)
+    return sum1+sum2
+}
+
+
+//Преобразовать число в перевернутый массив цифр
+// Учитывая случайное неотрицательное число, вы должны вернуть цифры этого числа в массиве в обратном порядке. Пример (ввод => вывод):
+function digitize(n) {
+    return n.toString().split("").reverse().map(Number)
+}
+
+
+//Недавно я обнаружил несколько ошибок в своем коде Java/Type/Coffee-script и проследил проблему до глобальной функции isNaN, которую использовал. Я ожидал, что он будет более проницательным, но сейчас он возвращает true для undefined. Напишите функцию isReallyNaN, которая возвращает значение true, только если передается в аргументе, значение которого равно NaN, и возвращает значение false в противном случае. Допустимо любое решение!
+const isReallyNaN = (val) => {
+    if (val === undefined){
+        return false
+    }else if (typeof(val) === "object"){
+        return false
+    }else if (typeof(val) === "string"){
+        return false
+    }else if (typeof(val) === "function"){
+        return false
+    }else if (isNaN(val)){
+        return true
+    }else
+        return false
+};
