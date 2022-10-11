@@ -797,3 +797,33 @@ function sum (numbers) {
     "use strict";
     return numbers.reduce((a, b) => a + b, 0);
 }
+
+
+//Создайте функцию, которая выдает персонализированное приветствие. Эта функция принимает два параметра: имя и владелец. Используйте условные выражения, чтобы вернуть правильное сообщение: возврат дела
+// имя равно владельцу «Привет, босс»
+// иначе «Привет, гость»
+function greet (name, owner) {
+    if (name===owner) {
+        return 'Hello boss'
+    } else {
+        return 'Hello guest'
+    }
+}
+
+
+//Создайте функцию, которая проверяет, делится ли число n на два числа x И y. Все входные данные являются положительными, ненулевыми числами.
+//Examples:
+// 1) n =   3, x = 1, y = 3 =>  true because   3 is divisible by 1 and 3
+// 2) n =  12, x = 2, y = 6 =>  true because  12 is divisible by 2 and 6
+// 3) n = 100, x = 5, y = 3 => false because 100 is not divisible by 3
+// 4) n =  12, x = 7, y = 5 => false because  12 is neither divisible by 7 nor 5
+function isDivisible(n, x, y) {
+    if (n%x==0 && n%y==0) {
+        return true
+    } else {
+        return false
+    }
+}
+
+
+//
