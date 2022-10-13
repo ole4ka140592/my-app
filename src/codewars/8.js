@@ -826,4 +826,54 @@ function isDivisible(n, x, y) {
 }
 
 
+//Напишите метод, который будет получать массив целых чисел в качестве параметра и будет обрабатывать каждое число из этого массива. Вернуть новый массив с обработкой каждого числа входного массива следующим образом: Если число имеет целый квадратный корень, возьмите его, иначе возведите число в квадрат.
+//Example
+// [4,3,9,7,2,1] -> [2,9,3,49,4,1]
+// Notes
+// The input array will always contain only positive numbers, and will never be empty or null.
+function squareOrSquareRoot(array) {
+    return array.map(m=> (Math.sqrt(m))% 1 == 0 ? Math.sqrt(m): m**2)
+}
+
+
+//Функция не возвращает правильные значения. Вы можете понять, почему? Пример (ввод --> вывод):
+//3 --> "Earth"
+function getPlanetName(id){
+    let name=id;
+    switch(id){
+        case 1:
+            name = 'Mercury'
+            return name
+        case 2:
+            name = 'Venus'
+            return name
+        case 3:
+            name = 'Earth'
+            return name
+        case 4:
+            name = 'Mars'
+            return name
+        case 5:
+            name = 'Jupiter'
+            return name
+        case 6:
+            name = 'Saturn'
+            return name
+        case 7:
+            name = 'Uranus'
+            return name
+        case 8:
+            name = 'Neptune'
+            return name
+    }
+    return name;
+}
+
+
+//Ваши измученные коллеги ищут у вас решение взять этот искаженный текст и удалить все числа. Ваша программа примет строку и удалит все числовые символы и вернет строку с пробелами и специальными символами ~#$%^&!@*():;"'.,? без изменений.
+function stringClean(s){
+    return s.replace(/[0-9]/g, '')
+}
+
+
 //
