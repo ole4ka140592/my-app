@@ -711,9 +711,9 @@ function billboard(name, price = 30) {
 
 //Я новичок в кодировании и теперь хочу получить сумму двух массивов... На самом деле сумму всех их элементов. Я буду признателен за вашу помощь. P.S. Каждый массив включает только целые числа. Выход - тоже число.
 function arrayPlusArray(arr1, arr2) {
-    let sum1=arr1.reduce((el,acc)=> el+acc)
-    let sum2=arr2.reduce((el,acc)=> el+acc)
-    return sum1+sum2
+    let sum1 = arr1.reduce((el, acc) => el + acc)
+    let sum2 = arr2.reduce((el, acc) => el + acc)
+    return sum1 + sum2
 }
 
 
@@ -726,23 +726,23 @@ function digitize(n) {
 
 //Недавно я обнаружил несколько ошибок в своем коде Java/Type/Coffee-script и проследил проблему до глобальной функции isNaN, которую использовал. Я ожидал, что он будет более проницательным, но сейчас он возвращает true для undefined. Напишите функцию isReallyNaN, которая возвращает значение true, только если передается в аргументе, значение которого равно NaN, и возвращает значение false в противном случае. Допустимо любое решение!
 const isReallyNaN = (val) => {
-    if (val === undefined){
+    if (val === undefined) {
         return false
-    }else if (typeof(val) === "object"){
+    } else if (typeof (val) === "object") {
         return false
-    }else if (typeof(val) === "string"){
+    } else if (typeof (val) === "string") {
         return false
-    }else if (typeof(val) === "function"){
+    } else if (typeof (val) === "function") {
         return false
-    }else if (isNaN(val)){
+    } else if (isNaN(val)) {
         return true
-    }else
+    } else
         return false
 };
 
 
 //ИИ заразил текст персонажем!! Этот текст теперь полностью изменен на этот символ. Если текст или символ пусты, вернуть пустую строку. Никогда не будет случая, когда оба пусты, так как ничего не происходит!! Примечание. Символ представляет собой строку длиной 1 или пустую строку.
-function contamination(text, char){
+function contamination(text, char) {
     return char.repeat(text.length
     )
 }
@@ -754,7 +754,7 @@ function contamination(text, char){
 //invert([]) == []
 //Можно предположить, что все значения являются целыми числами. Не изменяйте входной массив/список.
 function invert(array) {
-    return array.map(m=> m*(-1));
+    return array.map(m => m * (-1));
 }
 
 
@@ -762,7 +762,7 @@ function invert(array) {
 // Звучит легко, верно? Просто имейте в виду, что вы не можете использовать ни один из следующих символов: 0123456789*+-/
 // Удачи :)
 function unusualFive() {
-    return  true << true << true  | true;
+    return true << true << true | true;
 }
 
 
@@ -773,8 +773,8 @@ function check(a, x) {
 
 
 //Учитывая массив целых чисел в виде строк и чисел, верните сумму значений массива, как если бы все они были числами. Верните ответ в виде числа.
-function sumMix(x){
-    return Number(x.reduce((a,b)=>Number(a)+Number(b)))
+function sumMix(x) {
+    return Number(x.reduce((a, b) => Number(a) + Number(b)))
 }
 
 
@@ -793,7 +793,7 @@ function sumMix(x){
 // Что мы тестируем
 // Мы тестируем базовые циклы и математические операции. Это для новичков, которые только изучают циклы и математические операции.
 // Продвинутым пользователям это может показаться очень простым, и они могут легко записать это в одну строку.
-function sum (numbers) {
+function sum(numbers) {
     "use strict";
     return numbers.reduce((a, b) => a + b, 0);
 }
@@ -802,8 +802,8 @@ function sum (numbers) {
 //Создайте функцию, которая выдает персонализированное приветствие. Эта функция принимает два параметра: имя и владелец. Используйте условные выражения, чтобы вернуть правильное сообщение: возврат дела
 // имя равно владельцу «Привет, босс»
 // иначе «Привет, гость»
-function greet (name, owner) {
-    if (name===owner) {
+function greet(name, owner) {
+    if (name === owner) {
         return 'Hello boss'
     } else {
         return 'Hello guest'
@@ -818,7 +818,7 @@ function greet (name, owner) {
 // 3) n = 100, x = 5, y = 3 => false because 100 is not divisible by 3
 // 4) n =  12, x = 7, y = 5 => false because  12 is neither divisible by 7 nor 5
 function isDivisible(n, x, y) {
-    if (n%x==0 && n%y==0) {
+    if (n % x == 0 && n % y == 0) {
         return true
     } else {
         return false
@@ -832,15 +832,15 @@ function isDivisible(n, x, y) {
 // Notes
 // The input array will always contain only positive numbers, and will never be empty or null.
 function squareOrSquareRoot(array) {
-    return array.map(m=> (Math.sqrt(m))% 1 == 0 ? Math.sqrt(m): m**2)
+    return array.map(m => (Math.sqrt(m)) % 1 == 0 ? Math.sqrt(m) : m ** 2)
 }
 
 
 //Функция не возвращает правильные значения. Вы можете понять, почему? Пример (ввод --> вывод):
 //3 --> "Earth"
-function getPlanetName(id){
-    let name=id;
-    switch(id){
+function getPlanetName(id) {
+    let name = id;
+    switch (id) {
         case 1:
             name = 'Mercury'
             return name
@@ -871,27 +871,60 @@ function getPlanetName(id){
 
 
 //Ваши измученные коллеги ищут у вас решение взять этот искаженный текст и удалить все числа. Ваша программа примет строку и удалит все числовые символы и вернет строку с пробелами и специальными символами ~#$%^&!@*():;"'.,? без изменений.
-function stringClean(s){
+function stringClean(s) {
     return s.replace(/[0-9]/g, '')
 }
 
 
 //Вы спрашиваете маленькую девочку: «Сколько тебе лет?» Она всегда говорит «x лет», где x — случайное число от 0 до 9. Напишите программу, которая возвращает возраст девочки (0-9) в виде целого числа. Предположим, что тестовая входная строка всегда является допустимой строкой. Например, тестовый ввод может быть «1 год» или «5 лет». Первым символом в строке всегда является число.
-function getAge(inputString){
+function getAge(inputString) {
     return +inputString[0]
 }
 
 
 //Западный мужчина пытается найти золото в реке. Для этого он пропускает ведро через речную почву, а затем проверяет, есть ли в ней золото. Однако он мог бы работать более продуктивно, если бы написал алгоритм, выполняющий эту работу за него. Итак, вам нужно проверить, есть ли золото в ведре, и если да, вернуть True/true. Если нет, вернуть False/false.
-function checkTheBucket(bucket){
+function checkTheBucket(bucket) {
     return bucket.includes("gold")
 }
 
 
 //Дана строка произвольной длины с любыми символами ascii. Напишите функцию, которая определяет, содержит ли строка слово «английский» целиком. Порядок символов важен — строка «abcEnglishdef» верна, а «abcnEglishsef» — нет. Прописная или строчная буква не имеет значения - "eNglisH" тоже правильно. Возвращаемое значение в виде логических значений, true, если строка содержит «английский», false, если нет.
-function spEng(sentence){
+function spEng(sentence) {
     return sentence.toLowerCase().includes("english")
 }
 
 
-//
+//Есть предложение «3 по цене 2» (или «2+1», если хотите) на манго. Для данного количества и цены (за манго) рассчитайте общую стоимость манго.
+//Examples
+//mango(3, 3) ==> 6    # 2 mangoes for 3 = 6; +1 mango for free
+//mango(9, 5) ==> 30   # 6 mangoes for 5 = 30; +3 mango
+function mango(quantity, price) {
+    return (quantity - Math.floor(quantity / 3)) * price
+}
+
+
+//Создайте боевую функцию, которая берет текущее здоровье игрока и количество полученных повреждений и возвращает новое здоровье игрока. Здоровье не может быть меньше 0.
+function combat(health, damage) {
+    let current = health - damage
+    if (current < 0) {
+        return 0
+    }
+    return current
+}
+
+
+//Учитывая последовательность элементов и конкретный элемент в этой последовательности, вернуть элемент сразу после указанного элемента. Если элемент встречается в последовательности более одного раза, вернуть элемент после первого появления. Это должно работать для последовательности любого типа. Когда элемент отсутствует или за ним ничего не следует, функция должна возвращать nil в Clojure и Elixir, Nothing в Haskell, undefined в JavaScript, None в Python.
+//nextItem([1, 2, 3, 4, 5, 6, 7], 3) # 4
+//nextItem("testing", "t") # "e"
+function nextItem(xs, item) {
+    let found = false
+    let finalValue
+    for (const i of xs) {
+        if (found) {
+            finalValue = i
+            break
+        }
+        if (i === item) found = true
+    }
+    return finalValue
+}
