@@ -58,3 +58,18 @@ console.log(newArray1)
 let arrX= [1, "no", -5, 0, false, NaN]
 let arrXFalse= arrX.filter(m=> Boolean(m))
 console.log(arrXFalse)
+
+//выражения, которые выдают false:
+String(123) //"123"
+String(-12.3) //"-12,3"
+String(null) //"null"
+String(undefined) //"undefined"
+String(true) //"true"
+String(false)  //"false"
+Boolean('') //false
+Boolean(0) //false
+Boolean(-0) //false
+Boolean(NaN)  //false
+Boolean(null) //false
+Boolean(undefined) //false
+Boolean(false)//true
